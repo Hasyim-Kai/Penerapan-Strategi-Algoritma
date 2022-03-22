@@ -1,17 +1,17 @@
-let testMoney = 112.5;
+let targetBudget = 7500;
 
-let bills = {
-	hundredDollar: 100.0,
-	tenDollar: 10.0,
-	fiveDollar: 5.0,
-	oneDollar: 1.0,
-	quarter: 0.25,
-	dime: 0.1,
-	nickel: 0.05,
-	penny: 0.01
+let Rupiah = {
+	seratusRibu : 100000,
+	limaPuluhRibu : 50000,
+	duaPuluhRibu : 20000,
+	sepuluhPuluhRibu : 10000,
+	limaRibu : 5000,
+	duaRibu : 2000,
+	seribu: 1000,
+	limaRatus: 500
 }
 
-let FindingChange = (currency, amount) => {
+let currencyGreedyAlgorithm = (currency, amount) => {
 	//ResultBill is all the bill types and amount of bills we are returning
 	let resultBills = {};
 	let cashLeftover = amount;
@@ -28,12 +28,11 @@ let FindingChange = (currency, amount) => {
 				resultBills[key] = 1;
 			}
 			//Then we subtract the value from the leftover cash.
-			//toFixed(2), this is for fixing any float point errors that JavaScript have.
-			//The 2 is to fix it for 2 decimal point.
-			cashLeftover = (cashLeftover - currency[key]).toFixed(2)
+			// cashLeftover = (cashLeftover - currency[key])
+			cashLeftover -= currency[key]
 		}
 	}
 	return resultBills;
 }
 
-console.log(FindingChange(bills, testMoney))
+console.table(currencyGreedyAlgorithm(Rupiah, targetBudget))
