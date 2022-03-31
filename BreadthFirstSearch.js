@@ -15,7 +15,7 @@ const addNode = node => {
 
 const addEdge = (origin, destination) => {
     adjacencyList.get(origin).push(destination);
-    adjacencyList.get(destination).push(origin);
+    // adjacencyList.get(destination).push(origin);
 }
 
 node.forEach(addNode);
