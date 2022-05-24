@@ -1,6 +1,6 @@
-let targetBudget = 7500;
+// let targetBudget = 7500;
 
-let Rupiah = {
+const Rupiah = {
 	seratusRibu : 100000,
 	limaPuluhRibu : 50000,
 	duaPuluhRibu : 20000,
@@ -11,7 +11,7 @@ let Rupiah = {
 	limaRatus: 500
 }
 
-let currencyGreedyAlgorithm = (currency, amount) => {
+const currencyGreedyAlgorithm = (currency, amount) => {
 	//ResultBill is all the bill types and amount of bills we are returning
 	let resultBills = {};
 	let cashLeftover = amount;
@@ -35,4 +35,6 @@ let currencyGreedyAlgorithm = (currency, amount) => {
 	return resultBills;
 }
 
-console.table(currencyGreedyAlgorithm(Rupiah, targetBudget))
+export { currencyGreedyAlgorithm, Rupiah }
+
+// console.table(currencyGreedyAlgorithm(Rupiah, targetBudget))

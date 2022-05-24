@@ -4,6 +4,7 @@ import FindNumberSteps from "./pages/FindNumberSteps";
 import Fibonacci from "./pages/Fibonacci";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import MoneyReturn from "./pages/MoneyReturn";
 
 export default function AppRoutes() {
    return <BrowserRouter >
@@ -12,6 +13,7 @@ export default function AppRoutes() {
          <Route path='home' element={<Home />} />
          <Route path='find-number' element={<FindNumberSteps />} />
          <Route path='fibonacci' element={<Fibonacci />} />
+         <Route path='money-return' element={<MoneyReturn />} />
          <Route path='*' element={<NotFound />} />
       </Routes>
    </BrowserRouter >
