@@ -1,27 +1,14 @@
 import { useState } from "react";
 import InvoiceStepBar from "../components/InvoiceStepBar";
-import MyDropdown from "../components/MyDropdown";
 import { currencyGreedyAlgorithm, Rupiah } from "../Logic/greedy";
 
 export default function MoneyReturn() {
     const [nominalPembayaran, setNominalPembayaran] = useState(0)
-    const [kembalian, setKembalian] = useState<{}>()
 
     const [currency, setCurrency] = useState<string[]>([])
     const [jumlahCurrency, setJumlahCurrency] = useState<string[]>([])
 
     const moneyImgStyle = 'w-64 m-3'
-
-    // const Rupiah = {
-    //     seratusRibu : 100000,
-    //     limaPuluhRibu : 50000,
-    //     duaPuluhRibu : 20000,
-    //     sepuluhPuluhRibu : 10000,
-    //     limaRibu : 5000,
-    //     duaRibu : 2000,
-    //     seribu: 1000,
-    //     limaRatus: 500
-    // }
 
     function checkCurrency(money: string, id: string | number) {
         if (money === 'seratusRibu') {
@@ -46,16 +33,8 @@ export default function MoneyReturn() {
     function handleSubmit(e: any) {
         e.preventDefault()
         let aaa = currencyGreedyAlgorithm(Rupiah, (nominalPembayaran - 200000))
-        setKembalian(aaa)
         setCurrency(Object.keys(aaa))
         setJumlahCurrency(Object.values(aaa))
-        // for(let currencyInput in aaa){
-        //     setCurrency(currency.push(currencyInput))
-        //     setJumlahCurrency(jumlahCurrency.push(aaa[currencyInput]))
-        //     setJumlahCurrency([...currency, aaa[currencyInput]])
-        // console.log(currency)
-        // console.log(jumlahCurrency)
-        // }
     }
 
     return <>
@@ -74,7 +53,7 @@ export default function MoneyReturn() {
             <div className="flex justify-between">
                 <div>
                     <h1 className="font-bold text-2xl mb-2">Harga : Rp. 200.000</h1>
-                    <h1 className="font-semibold text-xl mb-2">Masukkan Nominal Pembayaran Tunai</h1>
+                    <h1 className="font-semibold text-xl mb-5 text-gray-500">Masukkan Nominal Pembayaran Tunai</h1>
                     <input className="px-4 py-2 rounded-md border-2" type="number" onChange={(e) => setNominalPembayaran(Number(e.target.value))} required />
                 </div>
             </div>
@@ -83,7 +62,7 @@ export default function MoneyReturn() {
             <section className="mx-auto mt-8">
                 <div className="flex justify-between items-center pb-3 border-b-2">
                     <h1 className="font-semibold text-2xl">Uang Kembalian</h1>
-                    <button className="px-3 py-2 rounded-lg text-white bg-blue-400 border-2 border-blue-500" onClick={handleSubmit}>Bayar</button>
+                    <button className="px-7 py-2 rounded-lg text-white text-lg font-semibold bg-blue-600 shadow-lg" onClick={handleSubmit}>Bayar</button>
                 </div>
 
                 <div className="mt-7 w-fit mx-auto grid grid-cols-2 gap-5">
