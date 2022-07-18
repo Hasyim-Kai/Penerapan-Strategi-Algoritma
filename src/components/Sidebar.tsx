@@ -22,6 +22,12 @@ export default function Sidebar() {
             <Link to='money-return'>Money Return</Link>
          </li>
          <li className={`${sidebarItemStyle} ${transitionStyle}`}>
+            <Link to='data-car'>Data Car Visalization</Link>
+         </li>
+         <li className={`${sidebarItemStyle} ${transitionStyle}`}>
+            <Link to='data-sales'>Data Sales Visalization</Link>
+         </li>
+         <li className={`${sidebarItemStyle} ${transitionStyle}`}>
             <Link to='/'>Logout</Link>
          </li>
       </ul>
