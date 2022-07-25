@@ -11,9 +11,9 @@ const Rupiah = {
 	limaRatus: 500
 }
 
-const currencyGreedyAlgorithm = (currency, amount) => {
+const currencyGreedyAlgorithm = (currency: any, amount: any) => {
 	//ResultBill is all the bill types and amount of bills we are returning
-	let resultBills = {};
+	let resultBills: any = {};
 	let cashLeftover = amount;
 
 	//We are checking from the highest bill first to the lowest
