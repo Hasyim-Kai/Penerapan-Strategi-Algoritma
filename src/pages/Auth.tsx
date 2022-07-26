@@ -4,7 +4,7 @@ export default function Auth() {
 
   function handleAuth(){
   const navigate = useNavigate();
-  navigate('home')
+  navigate('fibonacci')
   }
 
   return <form onSubmit={handleAuth} className="flex flex-col bg-orange-300 w-4/12 m-auto">
